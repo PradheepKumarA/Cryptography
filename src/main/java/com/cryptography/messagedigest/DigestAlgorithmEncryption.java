@@ -13,7 +13,7 @@ import java.security.MessageDigest;
  */
 
 public class DigestAlgorithmEncryption {
-    public static void main(String[] a) throws NoSuchAlgorithmException,UnsupportedEncodingException {
+    public static void main(String[] a) {
         Scanner in = new Scanner(System.in);
         // Get the stringToBeEncoded from console
         String stringToBeEncoded = in.nextLine();
@@ -24,10 +24,15 @@ public class DigestAlgorithmEncryption {
         System.out.println(shaEncodedString);
     }
 
-    public static String encryptString(String input, String algorithm) throws NoSuchAlgorithmException, UnsupportedEncodingException {
-        MessageDigest messageDigest = MessageDigest.getInstance(algorithm);
-        byte[] digest = messageDigest.digest(input.getBytes("UTF-8"));
-        return bytesToHex(digest);
+    public static String encryptString(String input, String algorithm) {
+        try {
+            MessageDigest messageDigest = MessageDigest.getInstance(algorithm);
+            byte[] digest = messageDigest.digest(input.getBytes("UTF-8"));
+            return bytesToHex(digest);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public static String bytesToHex(byte[] hash) {
