@@ -28,23 +28,17 @@ public class SymmetricEncryptionAlgorithm {
     public static void main(String[] args) throws IllegalBlockSizeException, InvalidKeyException, BadPaddingException, NoSuchAlgorithmException, NoSuchPaddingException, IOException {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter the String to be encoded : ");
-//        String data = in.nextLine();
+        String data = in.nextLine();
         System.out.println("Enter the secret value : ");
-//        String secret = in.nextLine();
+        String secret = in.nextLine();
         System.out.println("Enter the Algorithm - AES : ");
-//        String algorithm = in.nextLine();
-
-
-        String data = "data";
-        String secret = "secret0123456789";
-        String algorithm = "AES";
+        String algorithm = in.nextLine();
 
         String encryptedData = encryptString(data, secret, algorithm);
         System.out.println("Encrypted data : " + encryptedData);
 
         String decryptedData = decryptString(encryptedData, secret, algorithm);
         System.out.println("Decrypted data : " + decryptedData);
-
     }
 
     public static String encryptString(String data, String secret, String algorithm) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException, UnsupportedEncodingException {
