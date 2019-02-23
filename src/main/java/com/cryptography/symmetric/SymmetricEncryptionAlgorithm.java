@@ -1,4 +1,4 @@
-package com.cryptography.messagedigest;
+package com.cryptography.symmetric;
 
 
 import sun.misc.BASE64Decoder;
@@ -63,5 +63,4 @@ public class SymmetricEncryptionAlgorithm {
         byte[] originalData = cipher.doFinal(decodedBytes);
         return new String(originalData);
     }
-
 }

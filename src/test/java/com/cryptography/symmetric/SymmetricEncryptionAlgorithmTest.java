@@ -1,4 +1,4 @@
-package com.cryptography.messagedigest;
+package com.cryptography.symmetric;
 
 import org.junit.jupiter.api.Test;
 
